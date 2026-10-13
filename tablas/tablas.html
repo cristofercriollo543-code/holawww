@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../estilos/estilos1.css">
+        <title>Tablas de ventas</title>
+    </head>
+    <body>
+        <!--contenedor main-->
+        <main>
+            <!--cabecera de la pagina web-->
+            <header>
+                <h1>tabla de ventas</h1>
+                <p>Resumen de productos y ventas del primer trimestre</p>
+            </header>
+            <!--Creamos la tabla-->
+            <div class="tabla-contenedor" role="region" aria-label="Tabla de ventas con desplazamiento horizontal" tabindex="0">
+                <table>
+                    <caption>ventas en enero a marzo  - valores en USD</caption>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" scope="col">Categoría</th>
+                            <th rowspan="2" scope="col">Nº</th>
+                            <th rowspan="2" scope="col">Imagen</th>
+                            <th rowspan="2" scope="col">Producto</th>
+                            <th rowspan="2" scope="col">Descripción</th>
+                            <th colspan="3" scope="colgroup">Ventas mensuales (unidades)</th>
+                            <th rowspan="2" scope="col">Total unidades</th>
+                            <th rowspan="2" scope="col">Precio unitario</th>
+                            <th rowspan="2" scope="col">Total de ventas</th>
+                        </tr>
+
+                        <tr>
+                            <th scope="col">Enero</th>
+                            <th scope="col">Febrero</th>
+                            <th scope="col">marzo</th>
+                        </tr>
+                    </thead> <!--Fin cabecera tabla-->
+                    <!--Inicio cuerpo tabla-->
+                    <tbody>
+                        <tr>
+                            <th rowspan="2" scope="rowgroup" class="Categoría">Computadoras y Accesorios <small>2 productos</small></th>
+                            <td class="numero">1</td>
+                            <td>
+                                <img src="../img/Computador.jpg" class="imagen-producto" alt="laptop" width="64" height="64">
+                            </td>
+                            <th scope="row" class="producto">laptop</th>
+                            <td class="Descripción">Procesador core i5, 8GB de RAM y SSD 512</td>
+                            <td class="numero">10</td>
+                            <td class="numero">12</td>
+                            <td class="numero">8</td>
+                            <td class="numero">30</td>
+                            <td class="dinero">$650.00</td>
+                            <td class="dinero total-ventas">$19.500.00</td>
+                        </tr>
+
+                        <tr>
+                            <td class="numero">2</td>
+                            <td>
+                                <img src="../img/mouse.jpg" class="imagen-producto" alt="mouse" width="64" height="64">
+                            </td>
+                            <th scope="row" class="producto">mouse</th>
+                            <td class="Descripción">Mouse inalambrico con conexion a USB</td>
+                            <td class="numero">20</td>
+                            <td class="numero">15</td>
+                            <td class="numero">8</td>
+                            <td class="numero">60</td>
+                            <td class="dinero">$15</td>
+                            <td class="dinero total-ventas">$900.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div><!--Fin de contenedor tabla-->
+            <!--Parrafo para indicarle que es adaptable-->
+            <p class="nota">En pantallas pequeñas, deslizar la tabla horizontalmente para consultar todas las columnas</p>
+            <!--Boton inicio-->
+            <a href="../index.html" class="enlace-home">volver al inicio</a>
+        </main>
+    </body>
+</html>

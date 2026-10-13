@@ -4,6 +4,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width initial-scale=1.0">
         <title>HOLA WWW</title>
+        <!-----Insertando estilos css
+        <style>
+            body {
+                background-color: #781313;
+            }
+            h1 {
+                background-color: aqua;
+                text-align: center;
+            }
+
+            a {
+                background-color: lightgreen;
+            }
+        </style>----->
+
+        <!--insertando estilos css archivo fuera de html-->
+        <link rel="stylesheet" href="estilos/estilos.css">
     </head>
     <body>
         <!--Aquí va el título de la página web-->
@@ -19,7 +36,7 @@
         Son los espacios movibles donde se crea contenido html
         section, div, article-->
 
-        <section>
+        <section class="container">
 
             <!--Un enlace a youtube 
             Utilizamos la etiqueta a-ancle
@@ -31,7 +48,7 @@
             <!--Etiqueta para salto de linea-->
             <br>
             <!--Enlace a una imagen mediante una ruta relativa-->
-            <img src="img/html5.png" alt="Logo de html5" width="500px" height="500px">
+            <img id="imagen" src="img/html5.png" alt="Logo de html5" width="500px" height="500px">
             <!--Salto de linea-->
             <br>
             <!--Escribir un parrafo-->
@@ -498,6 +515,20 @@
                 </table>  
             </div>
         </section>
+        <!--Enlace a hoja de vida-->
+        <div>
+            <a href="tarea/tarea.html">Ir a la tabla de tarea</a>
+        </div>
+
+        <div>
+            <a href="vistas/formulario.html">Ir a la tabla de formularios</a>
+        </div>
+
+        <div>
+            <a href="tablas/tablas.html">Ingreso tabla 2</a>
+        </div>
+        
+       
 
         <br>
         <br>

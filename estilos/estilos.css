@@ -1,0 +1,31 @@
+/*Existe dos tipos de selectores
+globales:que se aplica a todo el documento
+etiqueta: que se aplica a la etiqueta correspondiente
+clase: se aplica al componente indicado que se invoca mediante su nombre, se utiliza las veces necesarias
+y el simbolo que se utiliza es el . 
+id: se aplica al componente indicado que se invoca mediante su nombre, se utiliza una sola vez y su simbolo es #
+*/
+
+/*-----------------------
+    selector global
+------------------------*/
+*{
+    margin: 15px;
+}
+
+h1{
+color: brown;
+text-align: center;
+width: 100%;
+}
+
+/*selector tipo clase*/
+.container{
+    color:blue;
+    text-align: right;
+}
+
+/*selector tipo id*/
+#imagen{
+    width: 100%;
+}

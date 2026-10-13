@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <!--Header: es la cabezera del body-->
+    <header>
+        <h1>Formulario</h1>
+    </header>
+    <!--Formulario-->
+    <div>
+        <form action="../index.html" method="get">
+        <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="nombres">Ingrese nombres</label>
+            <!--input->caja para ingresar texto-->
+            <input type="text" id="nombres">
+        </div>
+
+            <br>
+
+        <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="Cedula">Ingrese cedula/Identificacion</label>
+            <!--input->caja para ingresar texto-->
+            <input type="number" id="cedula">
+        </div>
+       
+            <br>
+       
+        <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="Correo Electronico">Ingrese su correo Electronico</label>
+            <!--input->caja para ingresar texto-->
+            <input type="email" id="correo">
+        </div>
+            <br>
+      
+        <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="Apellidos">Ingrese sus apellidos</label>
+            <!--input->caja para ingresar texto-->
+            <input type="text" id="apellidos">
+        </div>
+
+            <br>
+
+        <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="Genero">Genero:</label>
+
+            <br>
+            <!--input->caja para ingresar texto-->
+            <input type="radio" id="masculino" name="genero" value="masculino">
+            <label for="masculino">Masculino</label>
+
+            <br>
+
+            
+            <input type="radio" id="femenino" name="genero" value="femenino">
+            <label for="femenino">Femenino</label>
+
+            <br>
+            
+           <input type="radio" id="otro" name="genero" value="otro">
+           <label for="otro">Otro</label>
+
+            <br>
+
+        <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="telefono">Ingrese telefono</label>
+            <!--input->caja para ingresar texto-->
+            <input type="number" id="telefono">
+        </div>
+
+        <br>
+
+         <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="fechadenacimiento">Fecha de nacimiento</label>
+            <!--input->caja para ingresar texto-->
+            <input type="date" id="fechadenacimiento" name="fechadenacimiento">
+        </div>
+
+        <br>
+
+        <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="estadocivil">Estado civil</label>
+            <!--input->caja para ingresar texto-->
+            <select name="estadocivil" id="estadocivil">
+                <option value="">Seleccione una opcion</option>
+                <option value="soltero">soltero/a</option>
+                <option value="casado">casado/a</option>
+                <option value="divorciado">divorciado/a</option>
+                <option value="viudo">viudo/a</option>
+                <option value="union libre">union libre</option>
+            </select>
+
+        </div>
+
+         <br>
+
+        <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="direccion">Ingrese su direccion</label>
+            <!--input->caja para ingresar texto-->
+            <input type="text" id="direccion">
+        </div>
+
+        <br>
+
+        <h2>Informacion academica</h2>
+
+        <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="carrera">Seleccione su carrera</label>
+            <!--select->caja para seleccionar texto-->
+            <select name="carrera" id="carrera">
+                <option value="">Seleccione una opcion</option>
+                <option value="desarrollodesotfware">Desarrollo de software</option>
+                <option value="ingenieriacivil">Ingenieria civil</option>
+                <option value="medicina">Medicina</option>
+                <option value="derecho">Derecho</option>
+                <option value="arquitectura">Arquitectura</option>
+                <option value="administracion de empresas">Administracion de empresas</option>
+                <option value="Contabilidad">Contabilidad</option>
+                <option value="Diseñografico">Diseño Grafico</option>
+                <option value="psicologia">Psicologia</option>
+                <option value="marketing">Marketing</option>
+
+            </select>
+
+        </div>
+
+        <br>
+
+        <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="periodoacademico">Seleccione su Periodo academico</label>
+            <!--select->caja para seleccionar texto-->
+            <select name="periodoacademico" id="periodoacademico">
+                <option value="">Seleccione una opcion</option>
+                <option value="mayo-agosto2026">mayo - septiembre 2026</option>
+                <option value="septiembre-febrero2027">septiembre - febrero 2027</option>
+
+            </select>
+
+        </div>
+        <br>
+
+        <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="nivel">Seleccione su nivel</label>
+            <!--select->caja para seleccionar texto-->
+            <select name="nivel" id="nivel">
+                <option value="">Seleccione una opcion</option>
+                <option value="mayo-agosto2026">Primer nivel</option>
+                <option value="septiembre-febrero2027">Segundo nivel</option>
+                <option value="septiembre-febrero2027">Tercer nivel</option>
+                <option value="septiembre-febrero2027">Cuarto nivel</option>
+                <option value="septiembre-febrero2027"> Quinto nivel</option>
+
+            </select>
+
+        </div>
+
+        <br>
+
+        <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="modalidaddeestudio">Modalidad de estudio:</label>
+
+            <br>
+            <!--input->caja para ingresar texto-->
+            <input type="radio" id="presencial" name="modalidaddeestudio" value="presencial">
+            <label for="presencial">presencial</label>
+
+            <br>
+
+            
+            <input type="radio" id="enlinea" name="modalidaddeestudio" value="enlinea">
+            <label for="enlinea">En linea</label>
+
+            <br>
+            
+           <input type="radio" id="hibrida" name="modalidaddeestudio" value="hibrida">
+           <label for="hibrida">hibrida</label>
+
+        </div>
+
+         <br>
+
+         <div>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="institucion">¿Como se entero de la institucion?</label>
+            <!--select->caja para seleccionar texto-->
+            <select name="institucion" id="institucion">
+                <option value="">Seleccione una opcion</option>
+                <option value="redessociales">Redes sociales</option>
+                <option value="conocido">Por un conocido</option>
+                <option value="tiktok">Tik tok</option>
+                <option value="youtube">Youtube</option>
+                <option value="instagram"> Instagram</option>
+
+            </select>
+
+        </div>
+
+        <br>
+
+        <div>
+            <h2>Habilidades y conocimientos</h2>
+            <!--Label=Me permite ingresar texto fijo-->
+            <label for="areasdeinteres">Marque sus areas de interes:</label>
+
+            <br>
+            <!--input->caja para ingresar texto-->
+            <input type="checkbox" id="desarrolloweb" name="areasdeinteres" value="desarrolloweb">
+            <label for="desarrolloweb">desarrollo web</label>
+
+            <br>
+
+            
+            <input type="checkbox" id="inteligencia artificial" name="areasdeinteres" value="inteligencia artificial">
+            <label for="inteligencia artificial">inteligencia artificial</label>
+
+            <br>
+            
+           <input type="checkbox" id="redesyseguridad" name="areasdeinteres" value="redesyseguridad">
+           <label for="redesyseguridad">redes y seguridad</label>
+
+           <br>
+            
+           <input type="checkbox" id="basesdedatos" name="areasdeinteres" value="basesdedatos">
+           <label for="basesdedatos">bases de datos</label>
+
+           <br>
+            
+           <input type="checkbox" id="desarrollomovil" name="areasdeinteres" value="desarrollomovil">
+           <label for="desarrollomovil">desarrollo movil</label>
+
+           <br>
+            
+           <input type="checkbox" id="cienciadedatos" name="areasdeinteres" value="cienciadedatos">
+           <label for="cienciadedatos">ciencia de datos</label>
+
+           <br>
+            
+           <input type="checkbox" id="robotica" name="areasdeinteres" value="robotica">
+           <label for="robotica">robotica</label>
+
+           <br>
+            
+           <input type="checkbox" id="otras" name="areasdeinteres" value="otras">
+           <label for="otras">otras</label>
+
+           <br>
+
+           <label for="conocimientosenprogramacion">Nivel de conocimientos en programacion:</label>
+
+           <br>
+            
+           <input type="radio" id="basico" name="conocimientosenprogramacion" value="basico">
+           <label for="basico">basico</label>
+
+           <br>
+            
+           <input type="radio" id="intermedio" name="conocimientosenprogramacion" value="intermedio">
+           <label for="intermedio">intermedio</label>
+
+           <br>
+            
+           <input type="radio" id="avanzado" name="conocimientosenprogramacion" value="avanzado">
+           <label for="avanzado">avanzado</label>
+
+        </div>
+
+         <br>
+
+         <div>
+            <h2>Informacion adicional</h2>
+            <label for="foto">Cargue su fotografia:</label>
+            <input type="file" id="foto" name="foto" accept=".jpg,.png*">
+            <p>Formatos permitidos: JPG,PNG,(Max.2MB)</p>
+         </div>
+
+         <br>
+
+         <div>
+            <label for="documento">Adjuntar documento (opcional):</label>
+            <input type="file" id="documento" name="documento" accept=".pdf*">
+            <p>PDF(Max.5MB)</p>
+         </div>
+
+         <br>
+
+         <div>
+            <label for="observaciones">Observaciones:</label>
+            <br>
+           <textarea id="observaciones" name="observaciones" rows="5" cols="40"
+           placeholder="Escriba informacion adicional..."></textarea>
+         </div>
+
+         
+        </div>
+            <!--Boton submit me permite enviar la peticion o informacion-->
+            <input type="submit" value="Registrar">
+            <input type="reset" value="Limpiar">
+        </div>
+             <br>
+
+        </form>
+
+
+        <div>
+            <a href="../index.html">ir al home</a>
+        </div>
+
+    </div>
+</body>
+</html>
