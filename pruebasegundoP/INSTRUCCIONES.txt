@@ -1,0 +1,27 @@
+EXAMEN SEGUNDO PARCIAL - DESARROLLO WEB I
+PROYECTO: AutoElite Motors
+TIEMPO SUGERIDO: 3 HORAS | NOTA: 10 PUNTOS
+
+OBJETIVO: Diseñar una web responsiva usando CSS3 sobre el HTML5 entregado.
+
+REGLAS:
+- Modificar únicamente css/styles.css.
+- No utilizar frameworks (Bootstrap, Tailwind), librerías ni JavaScript.
+- No cambiar nombres de clases, contenido HTML ni imágenes.
+- Utilizar Flexbox, CSS Grid, selectores, pseudoclases y media queries.
+- El formulario es visual: no se evalúa el envío real de datos.
+- Probar en escritorio (>= 1200 px), tableta (768 px) y móvil (390 px).
+
+RÚBRICA /10:
+1. Estilos generales, colores, tipografía, espaciados: 1.0
+2. Encabezado y navegación con Flexbox: 1.5
+3. Hero y botones: 1.5
+4. Catálogo con Grid y tarjetas: 2.0
+5. Nosotros y formulario: 1.5
+6. Footer y estados hover/focus: 1.0
+7. Responsividad y media queries: 1.5
+
+ENTREGA: Carpeta completa comprimida en ZIP y 3 capturas de pantalla
+(escritorio, tableta, móvil).
+
+NOTA: Las imágenes SVG son ilustraciones vectoriales originales de referencia.

@@ -1,0 +1,688 @@
+/* EXAMEN SEGUNDO PARCIAL - DESARROLLO WEB I
+   Estudiante: Cristofer Jonathan Criollo Caisa
+   Curso: Desarrollo de software
+   INSTRUCCIONES: Implementar aquí TODO el CSS.
+   No modificar la estructura HTML ni los nombres de las clases.
+
+   1. Estilos generales, tipografía y contenedor
+   2. Header y navegación (Flexbox)
+   3. Portada principal (Flexbox)
+   4. Catálogo de 6 vehículos (CSS Grid)
+   5. Tarjetas, botones, hover y sombras
+   6. Nosotros y beneficios (Grid / Flexbox)
+   7. Formulario y estados :focus
+   8. Footer
+   9. Media queries: tablet <= 900px; móvil <= 600px
+*/
+/* Hace que padding y bordes formen parte del ancho y alto declarados. */
+* {
+    box-sizing: border-box;
+}
+
+/* Suaviza los saltos entre secciones y compensa la cabecera fija. */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 84px;
+}
+
+/* Define el color, la tipografía, el tamaño y el interlineado base del sitio. */
+body {
+    margin: 0;
+    color: #3F3D56;
+    background: #FFF1F2;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Evita que las imágenes excedan su contenedor y elimina el espacio de línea. */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Centra el contenido y limita el ancho máximo de las secciones. */
+.contenedor {
+    width: min(1100px, 88%);
+    margin: 0 auto;
+}
+
+/* Mantiene la cabecera visible al desplazarse y le añade fondo y sombra. */
+.encabezado {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    background: #EDE9FE;
+    box-shadow: 0 2px 14px #3F3D5612;
+}
+
+/* Alinea el logo, la navegación y el botón de cotización en una fila. */
+.encabezado-contenido {
+    display: flex;
+    min-height: 76px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+/* Da un tamaño uniforme al logo y evita que se deforme. */
+.marca img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+/* Empuja el menú hacia la derecha, dejando sitio junto al logo. */
+.navegacion {
+    margin-left: auto;
+    margin-right: 255px;
+}
+
+/* Quita sangrías y viñetas de las listas de navegación y del pie. */
+.menu,
+.pie-grid ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Ordena los enlaces principales horizontalmente y separa cada uno. */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+/* Quita el subrayado y hereda el color del texto en enlaces del menú y del pie. */
+.menu a,
+.pie-grid a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 160ms ease;
+}
+
+/* Cambia el color de los enlaces al pasar el cursor o enfocarlos con teclado. */
+.menu a:hover,
+.menu a:focus-visible,
+.pie-grid a:hover,
+.pie-grid a:focus-visible {
+    color: #8B78C6;
+}
+
+/* Define la forma, el tamaño, la alineación y la transición común de los botones. */
+.boton {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+/* Eleva un poco cualquier botón cuando el cursor está encima. */
+.boton:hover {
+    transform: translateY(-1px);
+}
+
+/* Da al botón principal fondo lavanda y texto blanco. */
+.boton-principal {
+    color: #fff;
+    background: #8B78C6;
+}
+
+/* Oscurece el botón principal para indicar que es interactivo. */
+.boton-principal:hover {
+    background: #7463B5;
+}
+
+/* Crea un botón transparente con borde claro, pensado para la portada oscura. */
+.boton-claro {
+    border-color: #ffffffa6;
+    color: #fff;
+    background: transparent;
+}
+
+/* Refuerza el borde y el fondo transparente al pasar el cursor. */
+.boton-claro:hover {
+    border-color: #fff;
+    background: #FFFFFF20;
+}
+
+/* Hace que los botones de las tarjetas ocupen todo el ancho con borde verde menta. */
+.boton-secundario {
+    width: 100%;
+    border-color: #A7DCC5;
+    color: #4F7468;
+    background: transparent;
+}
+
+/* Invierte los colores del botón secundario al pasar el cursor. */
+.boton-secundario:hover {
+    color: #fff;
+    background: #3F3D56;
+}
+
+/* Crea la franja oscura de portada y centra su contenido verticalmente. */
+.hero {
+    display: flex;
+    min-height: 490px;
+    align-items: center;
+    padding: 58px 0;
+    color: #fff;
+    background: #6B668B;
+}
+
+/* Coloca el texto y la imagen de la portada en dos columnas. */
+.hero-contenido {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: center;
+    gap: 54px;
+}
+
+/* Ajusta el tamaño, el ancho y el espaciado del título principal. */
+.hero-texto h1 {
+    max-width: 570px;
+    margin: 12px 0 18px;
+    font-size: 44px;
+    line-height: 1.12;
+}
+
+/* Limita el ancho del texto de portada y mejora su contraste con el fondo. */
+.hero-texto p {
+    max-width: 490px;
+    margin: 0 0 26px;
+    color: #F5F3FF;
+}
+
+/* Alinea los botones de portada y permite que pasen a otra línea. */
+.hero-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Mantiene la imagen de portada al ancho disponible y recorta su contenido. */
+.hero-imagen img {
+    width: 100%;
+    height: 330px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* Da color, peso y estilo uniforme a las etiquetas de sección. */
+.etiqueta {
+    color: #8B78C6;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* Añade separación vertical uniforme a las secciones principales. */
+.seccion {
+    padding: 72px 0;
+}
+
+/* Centra el encabezado del catálogo y lo separa de las tarjetas. */
+.seccion-encabezado {
+    margin-bottom: 34px;
+    text-align: center;
+}
+
+/* Unifica tamaño, color y espaciado de los títulos de las secciones. */
+.seccion-encabezado h2,
+.nosotros-texto h2,
+.contacto-texto h2 {
+    margin: 8px 0 10px;
+    color: #51476F;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+/* Da formato discreto a la descripción del encabezado del catálogo. */
+.seccion-encabezado p {
+    margin: 0;
+    color: #817A98;
+}
+
+/* Distribuye las tarjetas de vehículos en tres columnas iguales. */
+.vehiculos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* Da borde, esquinas, sombra y fondo a cada tarjeta de vehículo. */
+.vehiculo-card {
+    overflow: hidden;
+    border: 1px solid #E7E2F0;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 5px 18px #6B668B0c;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+/* Eleva la tarjeta y aumenta su sombra al pasar el cursor. */
+.vehiculo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px #51476F14;
+}
+
+/* Da altura uniforme a las fotos de vehículos y recorta el exceso. */
+.vehiculo-card > img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+/* Separa el nombre, el precio y los detalles de los bordes de la tarjeta. */
+.vehiculo-info {
+    padding: 18px;
+}
+
+/* Muestra el año con menor tamaño y color secundario. */
+.vehiculo-anio {
+    color: #77748B;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Destaca el nombre del vehículo en cada tarjeta. */
+.vehiculo-info h3 {
+    margin: 3px 0;
+    color: #3F3D56;
+    font-size: 19px;
+}
+
+/* Resalta el precio con tamaño mayor y color verde menta. */
+.vehiculo-precio {
+    margin: 4px 0 14px;
+    color: #6F9E8B;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Alinea transmisión, combustible y kilometraje sin viñetas. */
+.vehiculo-detalles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin: 0 0 18px;
+    padding: 0;
+    color: #77748B;
+    font-size: 12px;
+    list-style: none;
+}
+
+/* Diferencia la sección Nosotros mediante un fondo gris claro. */
+.nosotros {
+    background: #F3F0FF;
+}
+
+/* Distribuye la presentación y los beneficios en dos columnas. */
+.nosotros-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 58px;
+}
+
+/* Limita el ancho del título de presentación para facilitar su lectura. */
+.nosotros-texto h2 {
+    max-width: 430px;
+}
+
+/* Aplica un color secundario a los párrafos de Nosotros y Contacto. */
+.nosotros-texto p,
+.contacto-texto p {
+    color: #77748B;
+}
+
+/* Separa el botón de asesoría del texto que tiene encima. */
+.nosotros-texto .boton {
+    margin-top: 10px;
+}
+/* Ordena los cuatro beneficios en dos columnas. */
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Da forma circular y color verde menta a los símbolos de beneficios. */
+.beneficio-icono {
+    display: inline-grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border-radius: 50%;
+    color: #6F9E8B;
+    background: #D1FAE5;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Da jerarquía y color a los títulos de cada beneficio. */
+.beneficio h3 {
+    margin: 9px 0 4px;
+    color: #3F3D56;
+    font-size: 16px;
+}
+
+/* Reduce el tamaño y el margen de las descripciones de beneficios. */
+.beneficio p {
+    margin: 0;
+    color: #77748B;
+    font-size: 13px;
+}
+
+/* Coloca la información de contacto y el formulario en dos columnas. */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+    gap: 58px;
+}
+
+/* Evita que el título de contacto se extienda demasiado. */
+.contacto-texto h2 {
+    max-width: 390px;
+}
+
+/* Da fondo, borde y espaciado al formulario completo. */
+.formulario {
+    width: 100%;
+    padding: 26px;
+    border: 1px solid #E7E2F0;
+    border-radius: 6px;
+    background: #FFF8F8;
+}
+
+/* Coloca nombre y teléfono lado a lado en la fila del formulario. */
+.formulario-fila {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+/* Evita que los campos se desborden y deja espacio bajo cada uno. */
+.campo {
+    min-width: 0;
+    margin-bottom: 14px;
+}
+
+/* Muestra cada etiqueta encima de su campo y con texto destacado. */
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    color: #3F3D56;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Unifica el ancho, alto, tipografía y aspecto de los controles del formulario. */
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid #D8D3E5;
+    border-radius: 4px;
+    color: #3F3D56;
+    background: #fff;
+    font: inherit;
+    font-size: 14px;
+}
+
+/* Da altura al mensaje y permite redimensionarlo solo verticalmente. */
+.campo textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Resalta con lavanda el control del formulario que está activo. */
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: #8B78C6;
+    outline: 3px solid #8B78C62E;
+}
+
+/* Alinea la casilla de privacidad con su texto y limita el tamaño de este. */
+.aceptacion {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    color: #77748B;
+    font-size: 13px;
+}
+
+/* Alinea la casilla y pinta su control con el color verde menta. */
+.aceptacion input {
+    margin-top: 5px;
+    accent-color: #6F9E8B;
+}
+
+/* Hace que el botón para enviar la solicitud ocupe todo el ancho. */
+.boton-enviar {
+    width: 100%;
+    margin-top: 18px;
+}
+
+/* Define el fondo oscuro, el color de texto y el espaciado del pie. */
+.pie-pagina {
+    padding: 42px 0 16px;
+    color: #fff;
+    background: #6B668B;
+}
+
+/* Distribuye la marca, los enlaces rápidos y las redes en tres columnas. */
+.pie-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 32px;
+}
+
+/* Mantiene blancos y separados los títulos del pie. */
+.pie-grid h2,
+.pie-grid h3 {
+    margin: 0 0 10px;
+    color: #fff;
+}
+
+/* Define el tamaño del nombre de la concesionaria en el pie. */
+.pie-grid h2 {
+    font-size: 20px;
+}
+
+/* Define el tamaño de los subtítulos de las columnas del pie. */
+.pie-grid h3 {
+    font-size: 15px;
+}
+
+/* Da un tono más suave a las descripciones y al aviso de derechos. */
+.pie-grid p,
+.pie-inferior p {
+    margin: 0;
+    color: #E5E1F0;
+}
+
+/* Separa verticalmente los enlaces de cada lista del pie. */
+.pie-grid li + li {
+    margin-top: 5px;
+}
+
+/* Separa el aviso de derechos con margen y una línea divisoria. */
+.pie-inferior {
+    margin-top: 30px;
+    padding-top: 14px;
+    border-top: 1px solid #FFFFFF35;
+    font-size: 12px;
+}
+
+/* Ajusta espacios y columnas cuando el ancho de pantalla es de hasta 900 px. */
+@media (max-width: 900px) {
+    /* Compacta el espacio entre logo, menú y botón en la cabecera. */
+    .encabezado-contenido {
+        gap: 16px;
+    }
+
+    /* Reduce la separación entre enlaces de navegación. */
+    .menu {
+        gap: 16px;
+    }
+
+    /* Reduce el espacio entre texto e imagen de portada. */
+    .hero-contenido {
+        gap: 30px;
+    }
+
+    /* Reduce el título principal para que quepa en la columna. */
+    .hero-texto h1 {
+        font-size: 38px;
+    }
+
+    /* Muestra el catálogo en dos columnas en tabletas. */
+    .vehiculos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Reduce la separación entre las columnas de Nosotros y Contacto. */
+    .nosotros-grid,
+    .contacto-grid {
+        gap: 34px;
+    }
+}
+
+/* Reorganiza las secciones para pantallas de hasta 600 px de ancho. */
+@media (max-width: 600px) {
+    /* Compensa el alto de la cabecera móvil al saltar a una sección. */
+    html {
+        scroll-padding-top: 126px;
+    }
+
+    /* Aumenta el ancho útil del contenido en pantallas pequeñas. */
+    .contenedor {
+        width: 90%;
+    }
+
+    /* Permite que los elementos de cabecera se distribuyan en varias filas. */
+    .encabezado-contenido {
+        min-height: 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 14px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* Reduce el logo para adaptarlo a la cabecera móvil. */
+    .marca img {
+        width: 42px;
+        height: 42px;
+    }
+
+    /* Coloca el menú debajo del logo y del botón de cotización. */
+    .navegacion {
+        order: 3;
+        width: 100%;
+    }
+
+    /* Distribuye el menú a lo ancho y reduce el espacio entre enlaces. */
+    .menu {
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    /* Compacta el botón de cotización de la cabecera. */
+    .boton-cabecera {
+        min-height: 40px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    /* Reduce la altura y el espaciado de la portada móvil. */
+    .hero {
+        min-height: 0;
+        padding: 48px 0;
+    }
+
+    /* Apila portada, presentación y contacto en una sola columna. */
+    .hero-contenido,
+    .nosotros-grid,
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    /* Ajusta el título principal al ancho del teléfono. */
+    .hero-texto h1 {
+        font-size: 34px;
+    }
+
+    /* Reduce la altura de la imagen destacada en móvil. */
+    .hero-imagen img {
+        height: 230px;
+    }
+
+    /* Reduce el espaciado vertical de las secciones en móvil. */
+    .seccion {
+        padding: 54px 0;
+    }
+
+    /* Reduce el tamaño de los títulos secundarios en pantallas pequeñas. */
+    .seccion-encabezado h2,
+    .nosotros-texto h2,
+    .contacto-texto h2 {
+        font-size: 28px;
+    }
+
+    /* Apila las tarjetas del catálogo y reduce el espacio entre ellas. */
+    .vehiculos-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Da más altura a las fotos de vehículos en vista móvil. */
+    .vehiculo-card > img {
+        height: 210px;
+    }
+
+    /* Compacta la separación entre beneficios en pantallas pequeñas. */
+    .beneficios-grid {
+        gap: 20px 14px;
+    }
+
+    /* Reduce el relleno del formulario para ganar espacio en móvil. */
+    .formulario {
+        padding: 18px;
+    }
+
+    /* Apila nombre y teléfono en vez de mostrarlos en columnas. */
+    .formulario-fila {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    /* Muestra el pie en dos columnas con separación compacta. */
+    .pie-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 18px;
+    }
+
+    /* Hace que el bloque de marca ocupe todo el ancho del pie móvil. */
+    .pie-grid > div:first-child {
+        grid-column: 1 / -1;
+    }
+}
