@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Configuración del documento y recursos de estilos. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculadora</title>
@@ -10,15 +11,19 @@
 
 <body>
 
+    <!-- Contenedor principal de la calculadora. -->
     <main class="calculadora">
 
+        <!-- Encabezado con el título de la página. -->
         <header class="encabezado">
             <h1>calculadora</h1>
         </header>
      
 
+        <!-- Formulario para ingresar los números y mostrar el cálculo. -->
         <form id="formCalculadora">
 
+        <!-- Primer número que se usará en el cálculo. -->
         <div class="campo">
           <label for="numero1">
             <span class="numero uno">1</span>
@@ -28,6 +33,7 @@
           <input type="number" id="numero1" required>
         </div>
 
+        <!-- Segundo número que se usará en el cálculo. -->
         <div class="campo">
           <label for="numero2">
             <span class="numero dos">2</span>
@@ -37,10 +43,12 @@
           <input type="number" id="numero2" required>
         </div>
 
+        <!-- Envía los valores para realizar el cálculo. -->
         <div class="boton-cont">
           <input type="submit" value="Realizar calculo">
         </div>
 
+        <!-- Área donde se presenta el resultado. -->
         <section class="panel">
             <h3>Mostrando calculo Realizado</h3>
             <div id="resultado"></div>
@@ -51,6 +59,7 @@
 
     </main>
 
+    <!-- Carga la lógica de la calculadora. -->
     <script src="../JavaScrip2/JS/tarea.js"></script>
     
 </body>
