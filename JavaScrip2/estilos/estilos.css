@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #e8e4ff, #e1f5ff, #ffe8f2);
+    min-height: 100vh ;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+    color: #555578;
+}
+
+.calculadora {
+    width: 100%;
+    max-width: 750px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(135, 125, 210, 0.20);
+}
+
+.encabezado {
+    background: linear-gradient(135deg, #d8d0ff, #c8c1ff);
+    padding: 30px;
+    text-align: center;
+}
+
+.encabezado h1 {
+    color: #51458b;
+    font-size: 36px;
+    text-transform: lowercase;
+}
+
+#formCalculadora {
+    padding: 35px;
+}
+
+.campo {
+    margin-bottom: 30px;
+}
+
+.campo label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #5d5c83;
+}
+
+.numero {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 17px;
+    }
+
+.uno {
+    background-color: #a69af5;
+}
+
+.dos {
+    background-color: #8ed9bc;
+}
+
+.campo input {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #dedcff;
+    border-radius: 13px;
+    font-size: 18px;
+    color: #555578;
+    background-color: #fdfcff;
+    outline: none;
+    transition: 0.3s;
+
+}
+
+.campo input:focus {
+    border-color: #a69af5;
+    box-shadow: 0 0 8px rgba(166, 154, 245, 0.25);
+}
+
+.boton-cont {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.boton-cont input {
+    width: 100%;
+    padding: 18px;
+
+    background: linear-gradient(135deg, #b4a7ff, #9789ee);
+    color: white;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.boton-cont input:hover {
+    background: linear-gradient(135deg, #a394f5, #8272df);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(151, 137, 238, 0.3);
+}
+
+.panel {
+    background-color: #effaf8;
+    border: 2px solid #d9f3ee;
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.panel h3 {
+    color: #686394;
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+#resultado {
+    min-height: 90px;
+    padding: 20px;
+
+    background-color: #ffffff;
+    border: 2px dashed #d4d0fa;
+    border-radius: 12px;
+
+    color: #62578d;
+    font-size: 20px;
+    font-weight: bold;
+
+    overflow-wrap: anywhere;
+}
+
+
